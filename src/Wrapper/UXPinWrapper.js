@@ -1,5 +1,5 @@
-import React from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import React from "react";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import red from "@material-ui/core/colors/red";
 import pink from "@material-ui/core/colors/pink";
 import purple from "@material-ui/core/colors/purple";
@@ -21,23 +21,29 @@ import grey from "@material-ui/core/colors/grey";
 import blueGrey from "@material-ui/core/colors/blueGrey";
 
 const theme = createMuiTheme({
-  palette: {
-    primary: { main: indigo[500] }, 
-    secondary: { main: teal[100]}, 
-  },
-  typography: { useNextVariants: true },
+	palette: {
+		primary: { main: "#2a4abf" },
+		secondary: { main: "#ff6b06" },
+	},
+	typography: { useNextVariants: true },
 });
 
 export default function UXPinWrapper({ children }) {
-  let icons = document.createElement('link');
-  icons.setAttribute('href', 'https://fonts.googleapis.com/icon?family=Material+Icons');
-  icons.setAttribute('rel', 'stylesheet');
-  document.head.appendChild(icons);
+	let icons = document.createElement("link");
+	icons.setAttribute(
+		"href",
+		"https://fonts.googleapis.com/icon?family=Material+Icons",
+	);
+	icons.setAttribute("rel", "stylesheet");
+	document.head.appendChild(icons);
 
-  let roboto = document.createElement('link');
-  roboto.setAttribute('href', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500');
-  roboto.setAttribute('rel', 'stylesheet');
-  document.head.appendChild(roboto);
+	let roboto = document.createElement("link");
+	roboto.setAttribute(
+		"href",
+		"https://fonts.googleapis.com/css?family=Roboto:300,400,500",
+	);
+	roboto.setAttribute("rel", "stylesheet");
+	document.head.appendChild(roboto);
 
-  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
+	return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
 }
